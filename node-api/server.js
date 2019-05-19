@@ -13,17 +13,7 @@ mongoose.connect(
 );
 requireDir('./src/models');
 
-const Product = mongoose.model('Product');
-
-//primeira rota
-app.get('/', (req,res)=>{
-    Product.create({
-        title:'React Native',
-        description:'Build apps with react native',
-        url:'www.google.com.br'
-    })
-
-    return res.send('hello caina, tudo bem?');
-});
+//Rotas
+app.use('/api', require('./src/routes'));
 
 app.listen(3001);
