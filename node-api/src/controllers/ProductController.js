@@ -8,4 +8,10 @@ module.exports={
 
         return res.json(Products);
     },
+
+    async store(req, res){
+        const Products = await Product.create(req.body);
+        
+        return res.json(Products);
+    }
 };
