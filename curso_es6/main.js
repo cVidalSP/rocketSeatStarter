@@ -1,3 +1,5 @@
+// Classe em ES6 LEMBRANDO que nao existe classe de verdade, o babel faz a compilacao de codigo, trasnformando em javascript normal. E possivel ver isso no bundle.js
+
 // class List{
 //     constructor(){
 //         this.data=[];
@@ -7,7 +9,13 @@
 //         console.log(this.data);
 //     }
 // }
-// // Heranca entre classes
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Heranca entre classes
+
 // class TodoList extends List{
 //     constructor(){
 //         super();// chama o constructor da classe pai
@@ -27,6 +35,10 @@
 // }
 
 // MinhaLista.mostraUsuario();
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 // TRABALHANDO COM METODOS ESTATICOS
 
@@ -49,10 +61,36 @@
 // OU SEJA, metodos estaticos devem ser utilizados para realizar acoes
 // para fora do sua classe  por assim dizer. Por exemplo: 
 
-class Matematica{
-    static soma(a,b){
-        return a + b;
-    }
-}
+// class Matematica{
+//     static soma(a,b){
+//         return a + b;
+//     }
+// }
 
-console.log(Matematica.soma(1, 2));
+// console.log(Matematica.soma(1, 2));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// const => valor nao pode ser reatribuido
+
+// const e possivel "mutar"
+
+//ex: 
+
+// const usuario = { nome: 'Caina' };
+// usuario.nome = 'Cleiton';
+// console.log(usuario); // Funciona
+
+
+// function teste (x){
+//     let y = 2; // LET variavel de escopo ou seja, dentros das ' {}'
+//                // em que foi declarado.
+    
+//     if (x > 5){
+//         console.log(x, y);
+//     }
+// }
+
+// teste(10);

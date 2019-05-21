@@ -1,11 +1,6 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
+// Classe em ES6 LEMBRANDO que nao existe classe de verdade, o babel faz a compilacao de codigo, trasnformando em javascript normal. E possivel ver isso no bundle.js
 // class List{
 //     constructor(){
 //         this.data=[];
@@ -15,7 +10,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 //         console.log(this.data);
 //     }
 // }
-// // Heranca entre classes
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Heranca entre classes
 // class TodoList extends List{
 //     constructor(){
 //         super();// chama o constructor da classe pai
@@ -30,6 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 //     MinhaLista.add('Novo todo');
 // }
 // MinhaLista.mostraUsuario();
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // TRABALHANDO COM METODOS ESTATICOS
 // class TodoList{
 //     constructor(){
@@ -45,21 +42,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 // TodoList.addTodo();
 // OU SEJA, metodos estaticos devem ser utilizados para realizar acoes
 // para fora do sua classe  por assim dizer. Por exemplo: 
-var Matematica =
-/*#__PURE__*/
-function () {
-  function Matematica() {
-    _classCallCheck(this, Matematica);
+// class Matematica{
+//     static soma(a,b){
+//         return a + b;
+//     }
+// }
+// console.log(Matematica.soma(1, 2));
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// const => valor nao pode ser reatribuido
+// const e possivel "mutar"
+//ex: 
+// const usuario = { nome: 'Caina' };
+// usuario.nome = 'Cleiton';
+// console.log(usuario); // Funciona
+function teste(x) {
+  var y = 2; // LET variavel de escopo ou seja, dentros das ' {}'
+  // em que foi declarado.
+
+  if (x > 5) {
+    console.log(x, y);
   }
+}
 
-  _createClass(Matematica, null, [{
-    key: "soma",
-    value: function soma(a, b) {
-      return a + b;
-    }
-  }]);
-
-  return Matematica;
-}();
-
-console.log(Matematica.soma(1, 2));
+teste(10);
