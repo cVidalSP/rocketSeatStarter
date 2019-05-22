@@ -197,21 +197,71 @@
 
 //Desestruturacao
 
-const usuario ={
-    nome: 'caina',
+// const usuario ={
+//     nome: 'caina',
+//     idade: '20',
+//     endereco:{
+//         cidade: 'Ferraz de Vasconcelos',
+//         estado: 'SP',
+//     },
+// };
+
+// function mostraNome({ nome }){
+//     console.log(`Na func ${nome}`);
+// }
+// mostraNome(usuario);
+
+// const { nome, idade, endereco: {cidade, estado} } = usuario;
+
+// console.log(`Nome: ${nome}, ${idade} anos.`);
+// console.log(`Cidade: ${cidade} - ${estado}`);
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+// Operadores rest/spread
+
+const usuario = {
+    nome:'Caina',
     idade: '20',
-    endereco:{
-        cidade: 'Ferraz de Vasconcelos',
-        estado: 'SP',
-    },
+    empresa: 'xd'
 };
 
-function mostraNome({ nome }){
-    console.log(`Na func ${nome}`);
+// REST
+
+const { nome, ...resto } = usuario;
+
+console.log(nome);
+console.log(resto);
+
+const arr = [ 1, 2, 3, 4 ];
+
+const [ a, b, ...c ] = arr;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+function soma(...params){
+    return params.reduce((total, next) => total + next);
 }
-mostraNome(usuario);
 
-const { nome, idade, endereco: {cidade, estado} } = usuario;
+console.log(soma(1, 4, 7, 8));
 
-console.log(`Nome: ${nome}, ${idade} anos.`);
-console.log(`Cidade: ${cidade} - ${estado}`);
+// SPREAD
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const arr3 = [...arr1, ...arr2];
+
+console.log(arr3);
+
+const usuario1={
+    nome: 'caina',
+    idade: '20',
+};
+
+const usuario2 = { ...usuario1, nome:'Gabriel' };
+
+console.log(usuario2);
