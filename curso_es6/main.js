@@ -94,3 +94,39 @@
 // }
 
 // teste(10);
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
+// Operacoes em array
+
+const arr = [1,3,4,5,8,9];
+
+//Executa uma funcao para cada item e retorna um novo array
+const newArr = arr.map(function(item){
+    return item * 2; 
+});
+
+console.log(newArr);
+
+//Executa uma acao em detrimento do array inteiro, por exemplo a soma de todos os numeros e retorna uma variavel
+const sum = arr.reduce(function(total, next){
+    return total+next;
+})
+
+console.log(sum);
+
+//Filtra a array com os itens que correspondem a pesquisa (item % 2 === 0 ou seja, numeros pares no exemplo)
+const filter = arr.filter(function(item){
+    return item % 2 === 0;
+})
+
+console.log(filter);
+
+//Busca de dentro da array itens que correspondem a pesquisa
+const find = arr.find(function(item){
+    return item === 2;
+})
+
+console.log(find);
