@@ -306,3 +306,68 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
+// Exercicio 1
+
+class User {
+    constructor(Email, Senha){
+        this.email = Email,
+        this.senha = Senha,
+        this.admin = false
+    }
+
+    isAdmin(){
+        return(this.admin? true : false)
+    }
+}
+
+class Admin extends User{
+    constructor(Email, Senha){
+        super(Email, Senha);
+        this.admin = true;
+    }
+}
+
+const usuario = new User('teste@gmail.com', 123);
+const admin = new Admin('teste2@gmail.com', 321);
+
+console.log("usuario " + usuario.isAdmin());
+console.log("admin " + admin.isAdmin());
+
+
+// Exercicio 2
+
+
+const usuarios = [
+    { nome: 'Caina', idade: 20, empresa: 'xd' },
+    { nome: 'Eduardo', idade: 15, empresa: 'xd' },
+    { nome: 'Rafael', idade: 30, empresa: 'gg' },
+];
+
+const idades = usuarios.map((data) =>{
+    return(data.idade);
+})
+console.log(idades);
+
+const xd = usuarios.filter((data) => {
+    return(data.empresa == 'xd'? data: null);
+})
+console.log(xd);
+
+const google = usuarios.find((data)=>{
+    return(data.empresa == 'Google'? data : null);
+});
+console.log(google);
+
+const menor50 = usuarios.map((data) => {
+    
+    data.idade*=2;
+
+    return(data);
+
+}).filter((data) =>{
+
+    return(data.idade <=50? data : null);
+
+});
+
+console.log(menor50);

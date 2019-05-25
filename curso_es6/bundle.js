@@ -1,3 +1,23 @@
+"use strict";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 // Classe em ES6 LEMBRANDO que nao existe classe de verdade, o babel faz a compilacao de codigo, trasnformando em javascript normal. E possivel ver isso no bundle.js
 // class List{
 //     constructor(){
@@ -196,4 +216,78 @@
 // console.log(usuario);
 // console.log(usuarioComShortSyntax);
 ///////////////////////////////////////////////////////////////////////////////////////
-"use strict";
+// Exercicio 1
+var User =
+/*#__PURE__*/
+function () {
+  function User(Email, Senha) {
+    _classCallCheck(this, User);
+
+    this.email = Email, this.senha = Senha, this.admin = false;
+  }
+
+  _createClass(User, [{
+    key: "isAdmin",
+    value: function isAdmin() {
+      return this.admin ? true : false;
+    }
+  }]);
+
+  return User;
+}();
+
+var Admin =
+/*#__PURE__*/
+function (_User) {
+  _inherits(Admin, _User);
+
+  function Admin(Email, Senha) {
+    var _this;
+
+    _classCallCheck(this, Admin);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Admin).call(this, Email, Senha));
+    _this.admin = true;
+    return _this;
+  }
+
+  return Admin;
+}(User);
+
+var usuario = new User('teste@gmail.com', 123);
+var admin = new Admin('teste2@gmail.com', 321);
+console.log("usuario " + usuario.isAdmin());
+console.log("admin " + admin.isAdmin()); // Exercicio 2
+
+var usuarios = [{
+  nome: 'Caina',
+  idade: 20,
+  empresa: 'xd'
+}, {
+  nome: 'Eduardo',
+  idade: 15,
+  empresa: 'xd'
+}, {
+  nome: 'Rafael',
+  idade: 30,
+  empresa: 'gg'
+}];
+var idades = usuarios.map(function (data) {
+  return data.idade;
+});
+console.log(idades);
+var xd = usuarios.filter(function (data) {
+  return data.empresa == 'xd' ? data : null;
+});
+console.log(xd);
+var google = usuarios.find(function (data) {
+  return data.empresa == 'Google' ? data : null;
+});
+console.log(google);
+var menor50 = usuarios.map(function (data) {
+  data.idade *= 2;
+  return data;
+}).filter(function (data) {
+  return data.idade <= 50 ? data : null;
+});
+console.log(menor50);
