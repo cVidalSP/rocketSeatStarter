@@ -221,47 +221,88 @@
 
 // Operadores rest/spread
 
-const usuario = {
-    nome:'Caina',
-    idade: '20',
-    empresa: 'xd'
-};
+// const usuario = {
+//     nome:'Caina',
+//     idade: '20',
+//     empresa: 'xd'
+// };
 
-// REST
+// // REST
 
-const { nome, ...resto } = usuario;
+// const { nome, ...resto } = usuario;
 
-console.log(nome);
-console.log(resto);
+// console.log(nome);
+// console.log(resto);
 
-const arr = [ 1, 2, 3, 4 ];
+// const arr = [ 1, 2, 3, 4 ];
 
-const [ a, b, ...c ] = arr;
+// const [ a, b, ...c ] = arr;
 
-console.log(a);
-console.log(b);
-console.log(c);
+// console.log(a);
+// console.log(b);
+// console.log(c);
 
-function soma(...params){
-    return params.reduce((total, next) => total + next);
-}
+// function soma(...params){
+//     return params.reduce((total, next) => total + next);
+// }
 
-console.log(soma(1, 4, 7, 8));
+// console.log(soma(1, 4, 7, 8));
 
-// SPREAD
+// // SPREAD
 
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
 
-const arr3 = [...arr1, ...arr2];
+// const arr3 = [...arr1, ...arr2];
 
-console.log(arr3);
+// console.log(arr3);
 
-const usuario1={
-    nome: 'caina',
-    idade: '20',
-};
+// const usuario1={
+//     nome: 'caina',
+//     idade: '20',
+// };
 
-const usuario2 = { ...usuario1, nome:'Gabriel' };
+// const usuario2 = { ...usuario1, nome:'Gabriel' };
 
-console.log(usuario2);
+// console.log(usuario2);
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// Template literals
+
+//Usar variaveis dentro de strings a partir do es6
+
+// const nome = "Caina";
+// const idade = 20;
+
+// console.log("Meu nome eh " + nome + " e tenho " + idade + " anos.");
+
+// console.log(`Meu nome eh ${nome} e tenho ${idade} anos.`);
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+// Object Short Syntax
+
+// const nome = "Caina";
+// const idade = 20;
+
+// const usuario = {
+//     nome: nome,
+//     idade: idade,
+//     empresa: "XD",
+// }
+
+// const usuarioComShortSyntax = {
+//     nome,// quando o nome da propriedade e igual ao nome da variavel, e possivel esse tipo de codigo
+//     idade,
+//     empresa: "XD",
+// }
+
+// console.log(usuario);
+// console.log(usuarioComShortSyntax);
+
+///////////////////////////////////////////////////////////////////////////////////////
+

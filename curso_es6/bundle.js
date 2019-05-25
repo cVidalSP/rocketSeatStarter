@@ -1,13 +1,3 @@
-"use strict";
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 // Classe em ES6 LEMBRANDO que nao existe classe de verdade, o babel faz a compilacao de codigo, trasnformando em javascript normal. E possivel ver isso no bundle.js
 // class List{
 //     constructor(){
@@ -153,48 +143,57 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 // console.log(`Cidade: ${cidade} - ${estado}`);
 /////////////////////////////////////////////////////////////////////////////////////
 // Operadores rest/spread
-var usuario = {
-  nome: 'Caina',
-  idade: '20',
-  empresa: 'xd'
-}; // REST
-
-var nome = usuario.nome,
-    resto = _objectWithoutProperties(usuario, ["nome"]);
-
-console.log(nome);
-console.log(resto);
-var arr = [1, 2, 3, 4];
-var a = arr[0],
-    b = arr[1],
-    c = arr.slice(2);
-console.log(a);
-console.log(b);
-console.log(c);
-
-function soma() {
-  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
-    params[_key] = arguments[_key];
-  }
-
-  return params.reduce(function (total, next) {
-    return total + next;
-  });
-}
-
-console.log(soma(1, 4, 7, 8)); // SPREAD
-
-var arr1 = [1, 2, 3];
-var arr2 = [4, 5, 6];
-var arr3 = [].concat(arr1, arr2);
-console.log(arr3);
-var usuario1 = {
-  nome: 'caina',
-  idade: '20'
-};
-
-var usuario2 = _objectSpread({}, usuario1, {
-  nome: 'Gabriel'
-});
-
-console.log(usuario2);
+// const usuario = {
+//     nome:'Caina',
+//     idade: '20',
+//     empresa: 'xd'
+// };
+// // REST
+// const { nome, ...resto } = usuario;
+// console.log(nome);
+// console.log(resto);
+// const arr = [ 1, 2, 3, 4 ];
+// const [ a, b, ...c ] = arr;
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// function soma(...params){
+//     return params.reduce((total, next) => total + next);
+// }
+// console.log(soma(1, 4, 7, 8));
+// // SPREAD
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// const arr3 = [...arr1, ...arr2];
+// console.log(arr3);
+// const usuario1={
+//     nome: 'caina',
+//     idade: '20',
+// };
+// const usuario2 = { ...usuario1, nome:'Gabriel' };
+// console.log(usuario2);
+/////////////////////////////////////////////////////////////////////////////////
+// Template literals
+//Usar variaveis dentro de strings a partir do es6
+// const nome = "Caina";
+// const idade = 20;
+// console.log("Meu nome eh " + nome + " e tenho " + idade + " anos.");
+// console.log(`Meu nome eh ${nome} e tenho ${idade} anos.`);
+/////////////////////////////////////////////////////////////////////////////////
+// Object Short Syntax
+// const nome = "Caina";
+// const idade = 20;
+// const usuario = {
+//     nome: nome,
+//     idade: idade,
+//     empresa: "XD",
+// }
+// const usuarioComShortSyntax = {
+//     nome,// quando o nome da propriedade e igual ao nome da variavel, e possivel esse tipo de codigo
+//     idade,
+//     empresa: "XD",
+// }
+// console.log(usuario);
+// console.log(usuarioComShortSyntax);
+///////////////////////////////////////////////////////////////////////////////////////
+"use strict";
