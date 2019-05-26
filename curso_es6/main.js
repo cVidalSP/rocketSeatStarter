@@ -308,66 +308,104 @@
 
 // Exercicio 1
 
-class User {
-    constructor(Email, Senha){
-        this.email = Email,
-        this.senha = Senha,
-        this.admin = false
-    }
+// class User {
+//     constructor(Email, Senha){
+//         this.email = Email,
+//         this.senha = Senha,
+//         this.admin = false
+//     }
 
-    isAdmin(){
-        return(this.admin? true : false)
-    }
-}
+//     isAdmin(){
+//         return(this.admin? true : false)
+//     }
+// }
 
-class Admin extends User{
-    constructor(Email, Senha){
-        super(Email, Senha);
-        this.admin = true;
-    }
-}
+// class Admin extends User{
+//     constructor(Email, Senha){
+//         super(Email, Senha);
+//         this.admin = true;
+//     }
+// }
 
-const usuario = new User('teste@gmail.com', 123);
-const admin = new Admin('teste2@gmail.com', 321);
+// const usuario = new User('teste@gmail.com', 123);
+// const admin = new Admin('teste2@gmail.com', 321);
 
-console.log("usuario " + usuario.isAdmin());
-console.log("admin " + admin.isAdmin());
-
-
-// Exercicio 2
+// console.log("usuario " + usuario.isAdmin());
+// console.log("admin " + admin.isAdmin());
 
 
-const usuarios = [
-    { nome: 'Caina', idade: 20, empresa: 'xd' },
-    { nome: 'Eduardo', idade: 15, empresa: 'xd' },
-    { nome: 'Rafael', idade: 30, empresa: 'gg' },
-];
+// // Exercicio 2
 
-const idades = usuarios.map((data) =>{
-    return(data.idade);
-})
-console.log(idades);
 
-const xd = usuarios.filter((data) => {
-    return(data.empresa == 'xd'? data: null);
-})
-console.log(xd);
+// const usuarios = [
+//     { nome: 'Caina', idade: 20, empresa: 'xd' },
+//     { nome: 'Eduardo', idade: 15, empresa: 'xd' },
+//     { nome: 'Rafael', idade: 30, empresa: 'gg' },
+// ];
 
-const google = usuarios.find((data)=>{
-    return(data.empresa == 'Google'? data : null);
-});
-console.log(google);
+// const idades = usuarios.map((data) =>{
+//     return(data.idade);
+// })
+// console.log(idades);
 
-const menor50 = usuarios.map((data) => {
+// const xd = usuarios.filter((data) => {
+//     return(data.empresa == 'xd'? data: null);
+// })
+// console.log(xd);
+
+// const google = usuarios.find((data)=>{
+//     return(data.empresa == 'Google'? data : null);
+// });
+// console.log(google);
+
+// const menor50 = usuarios.map((data) => {
     
-    data.idade*=2;
+//     data.idade*=2;
 
-    return(data);
+//     return(data);
 
-}).filter((data) =>{
+// }).filter((data) =>{
 
-    return(data.idade <=50? data : null);
+//     return(data.idade <=50? data : null);
 
-});
+// });
 
-console.log(menor50);
+// console.log(menor50);
+
+// const arr = [1, 2, 3, 4, 5];
+
+// const itens = arr.map((item) =>item +10);
+
+// console.log(itens); 
+
+// const usuario = { nome: 'Diego', idade: 23 };
+
+// const idade = (object) => object.idade;
+
+// console.log(idade(usuario));
+
+// const nome = "Diego";
+// const idade = 23;
+
+// const mostraUsuario = (nome = 'Diego', idade = 18) =>{
+//     return ( nome, idade );
+// }
+
+// console.log(mostraUsuario(nome, idade));
+// console.log(mostraUsuario(nome));
+
+const promise = function() {
+    return new Promise(function(resolve,reject){
+        return resolve();
+    })
+}
+
+const promise1 = () =>{
+    return new Promise((resolve, reject) =>{
+        return resolve();
+    })
+}
+
+console.log(promise());
+console.log(promise1());
+
