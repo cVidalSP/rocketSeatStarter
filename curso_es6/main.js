@@ -505,6 +505,12 @@
  
 // WEBPACK - Configuracao
 
-import { soma } from './funcoes'
+import { soma, sub } from './funcoes';
+import DefaultMult from './funcoes';
+import * as funcoes from './funcoes';
 
-console.log(soma(1, 2));
+console.log(soma(2, 2));
+console.log(sub(2, 2));
+console.log(DefaultMult(2, 2));
+
+console.log(funcoes);
