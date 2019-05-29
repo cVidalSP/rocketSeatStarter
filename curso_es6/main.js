@@ -333,6 +333,7 @@
 // console.log("usuario " + usuario.isAdmin());
 // console.log("admin " + admin.isAdmin());
 
+////////////////////////////////////////////////////////////////////////
 
 // // Exercicio 2
 
@@ -372,6 +373,12 @@
 
 // console.log(menor50);
 
+
+
+////////////////////////////////////////////////////////////////////////
+
+// Exercicio 3
+
 // const arr = [1, 2, 3, 4, 5];
 
 // const itens = arr.map((item) =>item +10);
@@ -394,18 +401,46 @@
 // console.log(mostraUsuario(nome, idade));
 // console.log(mostraUsuario(nome));
 
-const promise = function() {
-    return new Promise(function(resolve,reject){
-        return resolve();
-    })
+// const promise = function() {
+//     return new Promise(function(resolve,reject){
+//         return resolve();
+//     })
+// }
+
+// const promise1 = () =>{
+//     return new Promise((resolve, reject) =>{
+//         return resolve();
+//     })
+// }
+
+// console.log(promise());
+// console.log(promise1());
+
+
+/////////////////////////////////////////////////////////////////////////
+
+// Exercicio 4
+
+const empresa = {
+    nome: 'Rocketseat',
+    idade: '3',
+    endereco: {
+        cidade: 'Rio do Sul',
+        estado: 'SC',
+    }
+};
+
+const { nome, endereco: { cidade, estado } } = empresa;
+
+console.log(nome);
+console.log(cidade);
+console.log(estado);
+
+
+function mostraInfo({ nome, idade }){
+    return `${nome} tem ${idade} anos.`
 }
 
-const promise1 = () =>{
-    return new Promise((resolve, reject) =>{
-        return resolve();
-    })
-}
+console.log(mostraInfo(empresa));
 
-console.log(promise());
-console.log(promise1());
 

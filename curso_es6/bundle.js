@@ -219,6 +219,7 @@
 // const admin = new Admin('teste2@gmail.com', 321);
 // console.log("usuario " + usuario.isAdmin());
 // console.log("admin " + admin.isAdmin());
+////////////////////////////////////////////////////////////////////////
 // // Exercicio 2
 // const usuarios = [
 //     { nome: 'Caina', idade: 20, empresa: 'xd' },
@@ -244,6 +245,8 @@
 //     return(data.idade <=50? data : null);
 // });
 // console.log(menor50);
+////////////////////////////////////////////////////////////////////////
+// Exercicio 3
 // const arr = [1, 2, 3, 4, 5];
 // const itens = arr.map((item) =>item +10);
 // console.log(itens); 
@@ -257,17 +260,40 @@
 // }
 // console.log(mostraUsuario(nome, idade));
 // console.log(mostraUsuario(nome));
-var promise = function promise() {
-  return new Promise(function (resolve, reject) {
-    return resolve();
-  });
+// const promise = function() {
+//     return new Promise(function(resolve,reject){
+//         return resolve();
+//     })
+// }
+// const promise1 = () =>{
+//     return new Promise((resolve, reject) =>{
+//         return resolve();
+//     })
+// }
+// console.log(promise());
+// console.log(promise1());
+/////////////////////////////////////////////////////////////////////////
+// Exercicio 4
+var empresa = {
+  nome: 'Rocketseat',
+  idade: '3',
+  endereco: {
+    cidade: 'Rio do Sul',
+    estado: 'SC'
+  }
 };
+var nome = empresa.nome,
+    _empresa$endereco = empresa.endereco,
+    cidade = _empresa$endereco.cidade,
+    estado = _empresa$endereco.estado;
+console.log(nome);
+console.log(cidade);
+console.log(estado);
 
-var promise1 = function promise1() {
-  return new Promise(function (resolve, reject) {
-    return resolve();
-  });
-};
+function mostraInfo(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  return "".concat(nome, " tem ").concat(idade, " anos.");
+}
 
-console.log(promise());
-console.log(promise1());
+console.log(mostraInfo(empresa));
