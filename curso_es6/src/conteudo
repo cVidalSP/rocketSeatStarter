@@ -528,3 +528,33 @@ console.log(funcoes);
         export default function mult(a, b){
             return a * b;
         }
+
+///////////////////////////////////////////////////////////////////
+
+// Exercicios WEBPACK
+
+// Outro arquivo functions.js
+
+export const idade = 23;
+
+export default class Usuario {
+    static info() {
+    console.log('Apenas teste');
+    }
+}
+
+//
+
+
+import ClasseUsuario from './functions';
+import { idade } from './functions'
+import ClasseUsuario2, { idade as IdadeUsuario} from './functions'; 
+
+ClasseUsuario.info();
+
+console.log(idade);
+
+ClasseUsuario2.info();
+
+console.log(IdadeUsuario);
+
