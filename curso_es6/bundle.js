@@ -1,5 +1,9 @@
 "use strict";
 
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 // Classe em ES6 LEMBRANDO que nao existe classe de verdade, o babel faz a compilacao de codigo, trasnformando em javascript normal. E possivel ver isso no bundle.js
 // class List{
 //     constructor(){
@@ -274,26 +278,60 @@
 // console.log(promise1());
 /////////////////////////////////////////////////////////////////////////
 // Exercicio 4
-var empresa = {
-  nome: 'Rocketseat',
-  idade: '3',
+// const empresa = {
+//     nome: 'Rocketseat',
+//     idade: '3',
+//     endereco: {
+//         cidade: 'Rio do Sul',
+//         estado: 'SC',
+//     }
+// };
+// const { nome, endereco: { cidade, estado } } = empresa;
+// console.log(nome);
+// console.log(cidade);
+// console.log(estado);
+// function mostraInfo({ nome, idade }){
+//     return `${nome} tem ${idade} anos.`
+// }
+// console.log(mostraInfo(empresa));
+///////////////////////////////////////////////////////////////////////
+// Exercicio 5
+var arr = [1, 2, 3, 4, 5, 6];
+var x = arr[0],
+    y = arr.slice(1);
+console.log(x);
+console.log(y);
+
+var soma = function soma() {
+  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+    params[_key] = arguments[_key];
+  }
+
+  return params.reduce(function (total, next) {
+    return total + next;
+  });
+};
+
+console.log(soma(2, 4, 6, 8, 10));
+var usuario = {
+  nome: 'Diego',
+  idade: 23,
   endereco: {
     cidade: 'Rio do Sul',
-    estado: 'SC'
+    uf: 'SC',
+    pais: 'Brasil'
   }
 };
-var nome = empresa.nome,
-    _empresa$endereco = empresa.endereco,
-    cidade = _empresa$endereco.cidade,
-    estado = _empresa$endereco.estado;
-console.log(nome);
-console.log(cidade);
-console.log(estado);
 
-function mostraInfo(_ref) {
-  var nome = _ref.nome,
-      idade = _ref.idade;
-  return "".concat(nome, " tem ").concat(idade, " anos.");
-}
+var usuario2 = _objectSpread({}, usuario, {
+  nome: 'Gabriel'
+});
 
-console.log(mostraInfo(empresa));
+var usuario3 = _objectSpread({}, usuario, {
+  endereco: _objectSpread({}, usuario.endereco, {
+    cidade: 'Lontras'
+  })
+});
+
+console.log(usuario2);
+console.log(usuario3);

@@ -421,26 +421,57 @@
 
 // Exercicio 4
 
-const empresa = {
-    nome: 'Rocketseat',
-    idade: '3',
+// const empresa = {
+//     nome: 'Rocketseat',
+//     idade: '3',
+//     endereco: {
+//         cidade: 'Rio do Sul',
+//         estado: 'SC',
+//     }
+// };
+
+// const { nome, endereco: { cidade, estado } } = empresa;
+
+// console.log(nome);
+// console.log(cidade);
+// console.log(estado);
+
+
+// function mostraInfo({ nome, idade }){
+//     return `${nome} tem ${idade} anos.`
+// }
+
+// console.log(mostraInfo(empresa));
+
+///////////////////////////////////////////////////////////////////////
+
+// Exercicio 5
+
+const arr = [1, 2, 3, 4, 5, 6];
+
+const [ x, ...y ] = arr;
+
+console.log(x);
+console.log(y);
+
+const soma = (...params) => {
+    return params.reduce((total, next) => total + next);
+}
+
+console.log(soma(2, 4 ,6, 8, 10));
+
+const usuario = {
+    nome: 'Diego',
+    idade: 23,
     endereco: {
         cidade: 'Rio do Sul',
-        estado: 'SC',
+        uf: 'SC',
+        pais: 'Brasil',
     }
 };
 
-const { nome, endereco: { cidade, estado } } = empresa;
+const usuario2 = { ...usuario, nome : 'Gabriel' }
+const usuario3 = { ...usuario, endereco: { ...usuario.endereco, cidade : 'Lontras' } }
 
-console.log(nome);
-console.log(cidade);
-console.log(estado);
-
-
-function mostraInfo({ nome, idade }){
-    return `${nome} tem ${idade} anos.`
-}
-
-console.log(mostraInfo(empresa));
-
-
+console.log(usuario2);
+console.log(usuario3);
