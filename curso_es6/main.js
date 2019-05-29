@@ -489,13 +489,22 @@
 
 // Exercicio 7
 
-const nome = 'Diego';
-const idade = 23;
+// const nome = 'Diego';
+// const idade = 23;
 
-const usuario = {
-    nome,
-    idade,
-    cidade: 'Rio do Sul',
-};
+// const usuario = {
+//     nome,
+//     idade,
+//     cidade: 'Rio do Sul',
+// };
 
-console.log(usuario);
+// console.log(usuario);
+
+
+////////////////////////////////////////////////////////////////////////////////////
+ 
+// WEBPACK - Configuracao
+
+import { soma } from './funcoes'
+
+console.log(soma(1, 2));
