@@ -558,3 +558,12 @@ ClasseUsuario2.info();
 
 console.log(IdadeUsuario);
 
+
+//////////////////////////////////////////////////////////////////////
+
+// Instalar o @babel/plugin-transform-async-to-generator 
+// e o @babel/polyfill como dependencias de dev. Em seguida
+// adicionar o primeiro no "plugins" no arquivo .babelrc e 
+// o @babel/polyfill no entry do webpack.config.js para que
+// o babel reconheca o async/awati do ES8
+
